@@ -1,8 +1,4 @@
-from zipfile import ZipFile
-import os
-
-# Criar a estrutura do projeto da landing page
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
@@ -74,6 +70,8 @@ html_content = """<!DOCTYPE html>
       padding: 1rem;
       margin-top: 2rem;
     }
+
+    /* Barra de progresso */
     .meta-container {
       background: #fff3e0;
       padding: 1.5rem;
@@ -122,6 +120,7 @@ html_content = """<!DOCTYPE html>
       Qualquer valor faz diferença! Doe o quanto quiser e faça parte da transformação de vidas de peludinhos 🐾
     </p>
 
+    <!-- BLOCO DE META E PROGRESSO -->
     <div class="meta-container">
       <h3>Meta de Doações: R$10.000 💰</h3>
       <div class="progress-bar">
@@ -145,16 +144,3 @@ html_content = """<!DOCTYPE html>
 
 </body>
 </html>
-"""
-
-# Salvar o HTML num arquivo temporário
-html_file_path = "/mnt/data/index.html"
-with open(html_file_path, "w", encoding="utf-8") as f:
-    f.write(html_content)
-
-# Criar o arquivo zip
-zip_path = "/mnt/data/doguinho-feliz.zip"
-with ZipFile(zip_path, "w") as zipf:
-    zipf.write(html_file_path, arcname="index.html")
-
-zip_path
